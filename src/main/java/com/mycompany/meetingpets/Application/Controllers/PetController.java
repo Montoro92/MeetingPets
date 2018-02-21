@@ -19,14 +19,13 @@ import org.springframework.web.bind.annotation.RestController;
  * @author montoro
  */
 @RestController
-@RequestMapping("/pet")
+@RequestMapping(value="/pet")
 public class PetController {
     
     @Autowired
     private PetRepository petRepository;
     
     @RequestMapping(method=RequestMethod.GET, value="/allPets")
-    @ResponseBody
     public List<PetEntity> getAllPets() {
         return petRepository.findAll();
     }

@@ -6,7 +6,6 @@
 package com.mycompany.meetingpets.Application.Repositories;
 
 import com.mycompany.meetingpets.Application.Entities.PetEntity;
-import com.mycompany.meetingpets.Application.Entities.PetEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
