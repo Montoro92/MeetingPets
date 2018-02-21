@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.meetingpets.Entities;
+package com.mycompany.meetingpets.Application.Entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -17,7 +18,8 @@ import javax.validation.constraints.NotNull;
  * @author montoro
  */
 @Entity
-public class Pet {
+@Table(name="pet")
+public class PetEntity {
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -28,9 +30,9 @@ public class Pet {
     @NotNull
     private String name;
     
-    public Pet(){}
+    public PetEntity(){}
     
-    public Pet(String name) {
+    public PetEntity(String name) {
         this.name=name;
     }
 
