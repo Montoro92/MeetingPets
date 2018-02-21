@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.meetingpets.Repositories;
+package com.mycompany.meetingpets.Application.Repositories;
 
-import Application.newEntity.Pet;
+import com.mycompany.meetingpets.Application.Entities.PetEntity;
+import com.mycompany.meetingpets.Application.Entities.PetEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author montoro
  */
-public interface PetRepository extends JpaRepository<Pet, Long> {
+public interface PetRepository extends JpaRepository<PetEntity, Long> {
     
 }

@@ -1,0 +1,4 @@
+com\mycompany\meetingpets\Application\Application.class
+com\mycompany\meetingpets\Application\Controllers\PetController.class
+com\mycompany\meetingpets\Application\Repositories\PetRepository.class
+com\mycompany\meetingpets\Application\Entities\PetEntity.class
