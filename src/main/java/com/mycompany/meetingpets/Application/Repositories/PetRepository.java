@@ -13,5 +13,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author montoro
  */
 public interface PetRepository extends JpaRepository<PetEntity, Long> {
-    
+    public PetEntity findById(Long id);
 }
