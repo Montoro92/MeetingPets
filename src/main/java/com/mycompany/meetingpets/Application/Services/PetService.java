@@ -31,6 +31,10 @@ public class PetService {
         return petRepository.findById(id);
     }
     
+    public PetEntity getByNif(String nif) {
+        return petRepository.findByNif(nif);
+    }
+    
     public String addPet(Map<String, Object> parameters) {
         PetEntity pet = new PetEntity();
         try {

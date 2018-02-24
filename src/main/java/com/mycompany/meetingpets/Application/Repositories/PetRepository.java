@@ -14,4 +14,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface PetRepository extends JpaRepository<PetEntity, Long> {
     public PetEntity findById(Long id);
+    public PetEntity findByNif(String nif);
 }
