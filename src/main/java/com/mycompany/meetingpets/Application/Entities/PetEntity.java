@@ -30,10 +30,15 @@ public class PetEntity {
     @NotNull
     private String name;
     
+    @Column(name="nif", unique=true)
+    @NotNull
+    private String nif;
+    
     public PetEntity(){}
     
-    public PetEntity(String name) {
+    public PetEntity(String name, String nif) {
         this.name=name;
+        this.nif = nif;
     }
 
     public Long getId() {
@@ -50,6 +55,14 @@ public class PetEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getNif() {
+        return nif;
+    }
+
+    public void setNif(String nif) {
+        this.nif = nif;
     }
     
 }

@@ -37,6 +37,11 @@ public class PetController {
         return petService.getById(Long.parseLong(id));
     }
     
+    @RequestMapping(method=RequestMethod.GET, value="/findByNif")
+    public PetEntity getByNif(@RequestParam String nif) {
+        return petService.getByNif(nif);
+    }
+    
     @RequestMapping(method=RequestMethod.POST, value="/addPet")
     public String addPet(@RequestBody Map<String, Object> parameters) {
         return petService.addPet(parameters);
