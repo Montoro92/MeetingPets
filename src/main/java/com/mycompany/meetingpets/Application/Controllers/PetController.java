@@ -6,10 +6,9 @@
 package com.mycompany.meetingpets.Application.Controllers;
 
 import com.mycompany.meetingpets.Application.Entities.PetEntity;
-import com.mycompany.meetingpets.Application.Repositories.PetRepository;
+import com.mycompany.meetingpets.Application.Services.PetService;
 import java.util.List;
 import java.util.Map;
-import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,45 +25,30 @@ import org.springframework.web.bind.annotation.RestController;
 public class PetController {
     
     @Autowired
-    private PetRepository petRepository;
+    private PetService petService;
     
     @RequestMapping(method=RequestMethod.GET, value="/allPets")
     public List<PetEntity> getAllPets() {
-        return petRepository.findAll();
+        return petService.getAllPets();
     }
     
     @RequestMapping(method=RequestMethod.GET, value="/findById")
     public PetEntity getById(@RequestParam String id) {
-        return petRepository.findById(Long.parseLong(id));
+        return petService.getById(Long.parseLong(id));
     }
     
     @RequestMapping(method=RequestMethod.POST, value="/addPet")
     public String addPet(@RequestBody Map<String, Object> parameters) {
-        PetEntity pet = new PetEntity();
-        try {
-            BeanUtils.populate(pet, parameters);
-            petRepository.saveAndFlush(pet);
-            return "OK";
-        } catch(Exception e) {
-            return e.getMessage();
-        }
+        return petService.addPet(parameters);
     }
     
     @RequestMapping(method=RequestMethod.PUT, value="/updatePet")
     public String updatePet(@RequestBody Map<String, Object> parameters) {
-        PetEntity pet = petRepository.findById(Long.parseLong(parameters.get("id").toString()));
-        try {
-            BeanUtils.populate(pet, parameters);
-            petRepository.saveAndFlush(pet);
-            return "OK";
-        } catch(Exception e) {
-            return e.getMessage();
-        }
+        return petService.updatePet(parameters);
     }
     
     @RequestMapping(method=RequestMethod.DELETE, value="/deletePet")
     public String deletePet(@RequestParam String id) {
-        petRepository.delete(Long.parseLong(id));
-        return "OK";
+        return petService.deletePet(Long.parseLong(id));
     }
 }
