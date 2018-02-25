@@ -1,5 +1,9 @@
 C:\Users\montoro\Documents\NetBeansProjects\MeetingPets\src\main\java\com\mycompany\meetingpets\Application\Application.java
 C:\Users\montoro\Documents\NetBeansProjects\MeetingPets\src\main\java\com\mycompany\meetingpets\Application\Controllers\PetController.java
 C:\Users\montoro\Documents\NetBeansProjects\MeetingPets\src\main\java\com\mycompany\meetingpets\Application\Repositories\PetRepository.java
+C:\Users\montoro\Documents\NetBeansProjects\MeetingPets\src\main\java\com\mycompany\meetingpets\Application\Entities\OwnerEntity.java
+C:\Users\montoro\Documents\NetBeansProjects\MeetingPets\src\main\java\com\mycompany\meetingpets\Application\Repositories\OwnerRepository.java
 C:\Users\montoro\Documents\NetBeansProjects\MeetingPets\src\main\java\com\mycompany\meetingpets\Application\Services\PetService.java
 C:\Users\montoro\Documents\NetBeansProjects\MeetingPets\src\main\java\com\mycompany\meetingpets\Application\Entities\PetEntity.java
+C:\Users\montoro\Documents\NetBeansProjects\MeetingPets\src\main\java\com\mycompany\meetingpets\Application\Controllers\OwnerController.java
+C:\Users\montoro\Documents\NetBeansProjects\MeetingPets\src\main\java\com\mycompany\meetingpets\Application\Services\OwnerService.java

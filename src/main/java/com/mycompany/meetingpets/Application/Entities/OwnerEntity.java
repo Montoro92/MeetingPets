@@ -5,10 +5,10 @@
  */
 package com.mycompany.meetingpets.Application.Entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,9 +26,9 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author montoro
  */
 @Entity
-@Table(name="pet")
+@Table(name="owner")
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-public class PetEntity {
+public class OwnerEntity {
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -43,17 +43,15 @@ public class PetEntity {
     @NotNull
     private String nif;
     
-    @ManyToOne
-    @JoinColumn(name = "owner")
-    //@JsonBackReference
-    //@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "customerId")
-    private OwnerEntity owner;
+    @OneToMany(mappedBy = "owner")
+    //@JsonManagedReference
+    private List<PetEntity> pets;
     
-    public PetEntity(){}
+    public OwnerEntity(){}
     
-    public PetEntity(String name, String nif) {
+    public OwnerEntity(String name, String nif) {
         this.name=name;
-        this.nif = nif;
+        this.nif=nif;
     }
 
     public Long getId() {
@@ -80,12 +78,12 @@ public class PetEntity {
         this.nif = nif;
     }
 
-    public OwnerEntity getOwner() {
-        return owner;
+    public List<PetEntity> getPets() {
+        return pets;
     }
 
-    public void setOwner(OwnerEntity owner) {
-        this.owner = owner;
+    public void setPets(List<PetEntity> pets) {
+        this.pets = pets;
     }
     
 }
