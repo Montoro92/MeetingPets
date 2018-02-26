@@ -1,9 +1,14 @@
-com\mycompany\meetingpets\Application\Repositories\OwnerRepository.class
+com\mycompany\meetingpets\Application\Services\MeetingService.class
 com\mycompany\meetingpets\Application\Services\PetService.class
-com\mycompany\meetingpets\Application\Repositories\PetRepository.class
+com\mycompany\meetingpets\Application\Entities\MeetingId.class
 com\mycompany\meetingpets\Application\Services\OwnerService.class
 com\mycompany\meetingpets\Application\Entities\PetEntity.class
-com\mycompany\meetingpets\Application\Application.class
+com\mycompany\meetingpets\Application\Controllers\MeetingController.class
+com\mycompany\meetingpets\Application\Repositories\MeetingRepository.class
 com\mycompany\meetingpets\Application\Controllers\PetController.class
 com\mycompany\meetingpets\Application\Entities\OwnerEntity.class
 com\mycompany\meetingpets\Application\Controllers\OwnerController.class
+com\mycompany\meetingpets\Application\Repositories\OwnerRepository.class
+com\mycompany\meetingpets\Application\Repositories\PetRepository.class
+com\mycompany\meetingpets\Application\Entities\MeetingEntity.class
+com\mycompany\meetingpets\Application\Application.class
